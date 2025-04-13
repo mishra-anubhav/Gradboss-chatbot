@@ -7,6 +7,9 @@ from local_model import load_local_llm  # kept for local dev
 from feedback import is_allowed_by_moderation
 from prompts import QA_PROMPT
 from langchain.chat_models import ChatOpenAI
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 
 os.environ["OPENAI_API_KEY"] = st.secrets["openai"]["OPENAI_API_KEY"]

@@ -154,3 +154,4 @@ langchain-core
 langchain-openai
 langchain-community
 langchainhub
+pysqlite3-binary
