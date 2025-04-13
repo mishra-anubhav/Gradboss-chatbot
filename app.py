@@ -7,10 +7,9 @@ from local_model import load_local_llm  # kept for local dev
 from feedback import is_allowed_by_moderation
 from prompts import QA_PROMPT
 from langchain.chat_models import ChatOpenAI
-from config import OPENAI_API_KEY
 
-# Set OpenAI API key
-os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+
+os.environ["OPENAI_API_KEY"] = st.secrets["openai"]["OPENAI_API_KEY"]
 
 # Streamlit page config
 st.set_page_config(page_title="GradBoss AI Chatbot", page_icon="🎓", layout="wide")
